@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" crossorigin="anonymous" />
+        <link rel="stylesheet" href="main.css"/>
+    </head>
+    <body>
+        <div class="row margin-top-lg">
+            <div class="container">
+                <div class="col-sm-4 text-center">
+                    <h2>Team Name </h2>
+                    <h3 id="teamName" class="text-primary">Default</h3>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <h2>Timer </h2>
+                    <h3 id="timer" class="text-danger"></h3>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <h2>Score </h2>
+                    <h3 id="score" class="text-success"></h3>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div>
+                <div class="circle red xs"></div>
+                <div class="circle green xlg"></div>
+                <div class="circle orange sm"></div>
+                <div class="circle yellow lg"></div>
+                <div class="circle blue md-1"></div>
+                <div class="circle gray md-3"></div>
+                <div class="circle black md-2"></div>
+            </div>
+            <div>
+                <div class="circle blue xlg"></div>
+                <div class="circle black xs"></div>
+                <div class="circle orange lg"></div>
+                <div class="circle green sm"></div>
+                <div class="circle red md-3"></div>
+                <div class="circle gray md-2"></div>
+                <div class="circle yellow md-1"></div>
+            </div>
+            <div>
+                <div class="circle gray xs"></div>
+                <div class="circle yellow xlg"></div>
+                <div class="circle green sm"></div>
+                <div class="circle orange lg"></div>
+                <div class="circle blue md-1"></div>
+                <div class="circle yellow md-3"></div>
+                <div class="circle black md-2"></div>
+            </div>
+            <div>
+                <div class="circle gray md-1"></div>
+                <div class="circle yellow md-2"></div>
+                <div class="circle green md-3"></div>
+                <div class="circle orange xlg"></div>
+                <div class="circle blue lg"></div>
+                <div class="circle yellow sm"></div>
+                <div class="circle black xs"></div>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+        <button id="playNowBtn" type="button" class="btn btn-lg btn-success margin-top margin-bottom pull-center"
+                data-toggle="modal" data-target="#nameModal">Play Now</button>
+
+        <div class="modal fade" id="nameModal" tabindex="-1" role="dialog" aria-labelledby="nameModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="nameModal">Team Name</h4>
+                    </div>
+                    <form>
+                        <div class="modal-body">
+                            <input class="form-control" name="teamName" type="text" />
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button id="saveTeamNameBtn" type="button" class="btn btn-primary">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="index.js"></script>
+</html>
