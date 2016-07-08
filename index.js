@@ -1,93 +1,104 @@
-var teamName = "Default";
-var score = 0;
-var TIMER_VALUE = 30000;
-var timer, timerText = 30, interval;
-
-var xsCircle = document.getElementsByClassName("xs");
-var smallCircle = document.getElementsByClassName("small");
-var md1Circle = document.getElementsByClassName("md-1");
-var md2Circle = document.getElementsByClassName("md-2");
-var md3Circle = document.getElementsByClassName("md-3");
-var lgCircle = document.getElementsByClassName("lg");
-var xlgCircle = document.getElementsByClassName("xlg");
-
-var scoreElement = document.getElementById("score");
-var timerElement = document.getElementById("timer");
-
-
-var playNowBtn = document.getElementById("playNowBtn");
-var saveTeamNameBtn = document.getElementById("saveTeamNameBtn");
-
+var COLOR = "gray";
 
 /***********************************************************************************************************************
 
-  Play Now button should open popup to accept team name.
+  Write code for event Handler
 
 ***********************************************************************************************************************/
+var scoreElement = document.querySelector("#score");
+var circles = document.querySelectorAll(".circle." + COLOR); // write code to select circles of your color
+
+function clickHandler() {
+  totalScore += SCORE;
+  scoreElement.innerHTML = totalScore;                    // Write code to update score text in HTML
+  $(this).hide();
+}
+
+function attachEventHandler(circle) {
+  circle.addEventListener("click", clickHandler);         // Write code to add event listener
+}
+
+function removeEventHandler(circle) {
+  circle.removeEventListener("click", clickHandler);      // Write code to remove event listener
+}
+
+/***********************************************************************************************************************
+
+  End of beginners code
+
+***********************************************************************************************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var SCORE = 10;
+var TIMER = 10;
+var totalScore = 0;
+var timerElement = document.querySelector("#timer");
+var playNowBtn = document.querySelector("#playNowBtn");
+var timer, interval;
+var length = circles.length;
+
 playNowBtn.addEventListener("click", function() {
-
-
-});
-
-
-
-/***********************************************************************************************************************
-
-  Save Team Name button should save team name in global variable.
-  It should start the game by binding click handlers with each of the circle
-  It should start the timer as well
-
-***********************************************************************************************************************/
-saveTeamNameBtn.addEventListener("click", function() {
-  // Close Popup
-  $('#nameModal').modal('hide');
-
-  // Save Team name
-  // Write code here
-
-
-  // Attach Listeners to each circle
-  // on click of each circle score should update
-  // hide circle
-  xsCircle.addEventListener("click", function() {
-    // Write code here - score 50 points
-  });
-
-  smallCircle.addEventListener("click", function() {
-    // Write code here - score 30 points
-  });
-
-  md1Circle.addEventListener("click", function() {
-    // Write code here - score 20 points
-  });
-
-  md2Circle.addEventListener("click", function() {
-    // Write code here - score 20 points
-  });
-
-  md3Circle.addEventListener("click", function() {
-    // Write code here - score 20 points
-  });
-
-  lgCircle.addEventListener("click", function() {
-    // Write code here - score 10 points
-  });
-
-  xlg1Circle.addEventListener("click", function() {
-    // Write code here - score 5 points
-  });
-
+  var timerText = 10;
 
   // Start Timer
   timer = setTimeout(function() {
-    // De attach all listeners from circles
-    // clear timer and interval
-  }, TIMER_VALUE);
+    if (timer)
+      clearTimeout(timer);
+
+
+  }, TIMER);
+
+  // Attach event handler
+  length = circles.length;
+  while(--length >= 0) {
+    attachEventHandler(circles[length]);
+  };
 
   // Update time
   interval = setInterval(function() {
-    --timerText;
     timerElement.innerHTML = timerText + " secs";
+    if (timerText == 0) {
+      clearInterval(interval);
+
+      length = circles.length;
+      while(--length >= 0) {
+        removeEventHandler(circles[length]);
+      };
+    }
+    --timerText;
   }, 1000);
+
+
 
 });

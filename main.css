@@ -1,245 +1,55 @@
-body {
+html, body {
+  width: 100%;
   text-align: center;
 }
 
 .wrapper {
   overflow: hidden;
-  width: 750px;
-  height: 450px;
+  width: 100%;
+  height: auto;
   margin: 30px auto;
   background: #f5f5f5;
 }
 
 .circle {
-  width: 100px;
-  height: 100px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  margin: 15px;
+  margin: 10px;
   float: left;
-
-  position: relative;
-  top: 0px;
-
-  -webkit-animation: movecircles1 2s infinite;
-  -moz-animation: movecircles1 2s infinite;
-  -o-animation: movecircles1 2s infinite;
 }
 
 .red {
   background-color: red;
   border: 1px solid red;
-
-  -webkit-animation: movecircles2 2s infinite;
-  -moz-animation: movecircles2 2s infinite;
-  -o-animation: movecircles2 2s infinite;
 }
 
 .green {
   background-color: green;
   border: 1px solid green;
-
-  -webkit-animation: movecircles3 2s infinite;
-  -moz-animation: movecircles3 2s infinite;
-  -o-animation: movecircles3 2s infinite;
 }
 
 .orange {
   background-color: orange;
   border: 1px solid orange;
-
-  -webkit-animation: movecircles3 2s infinite;
-  -moz-animation: movecircles3 2s infinite;
-  -o-animation: movecircles3 2s infinite;
 }
 
 .yellow {
   background-color: yellow;
   border: 1px solid yellow;
-
-  -webkit-animation: movecircles1 2s infinite;
-  -moz-animation: movecircles1 2s infinite;
-  -o-animation: movecircles1 2s infinite;
 }
 
 .blue {
   background-color: blue;
   border: 1px solid blue;
-
-  -webkit-animation: movecircles2 2s infinite;
-  -moz-animation: movecircles2 2s infinite;
-  -o-animation: movecircles2 2s infinite;
 }
 
 .gray {
   background-color: gray;
   border: 1px solid gray;
-
-  -webkit-animation: movecircles1 2s infinite;
-  -moz-animation: movecircles1 2s infinite;
-  -o-animation: movecircles1 2s infinite;
 }
 
 .black {
   background-color: black;
   border: 1px solid black;
-
-  -webkit-animation: movecircles4 2s infinite;
-  -moz-animation: movecircles4 2s infinite;
-  -o-animation: movecircles4 2s infinite;
-}
-
-.xs {
-  top: 0px;
-  left: 50px;
-  width: 20px;
-  height: 20px;
-
-  -webkit-animation: movecircles1 2s infinite;
-  -moz-animation: movecircles1 2s infinite;
-  -o-animation: movecircles1 2s infinite;
-}
-
-.sm {
-  top: 0px;
-  left: 0px;
-  width: 40px;
-  height: 40px;
-}
-
-.md-1 {
-  top: 90px;
-  left: 0px;
-  width: 60px;
-  height: 60px;
-}
-
-.md-2 {
-  top: 90px;
-  left: 75px;
-  width: 80px;
-  height: 80px;
-}
-
-.md-3 {
-  top: 10px;
-  left: 200px;
-  width: 100px;
-  height: 100px;
-}
-
-.lg {
-  top: 120px;
-  left: 10px;
-  width: 120px;
-  height: 120px;
-}
-
-.xlg {
-  top: 100px;
-  left: 100px;
-  width: 140px;
-  height: 140px;
-}
-
-.pull-center {
-  margin: 0 auto;
-}
-
-
-/***** animation *********/
-@-webkit-keyframes movecircles1 {
-	0%, 50% {
-    transform: translate3d(50px, 140px, 0px);
-    animation-timing-function: linear;
-  }
-  25%, 100% {
-    transform: translate3d(30px, 50px, 0px);
-    animation-timing-function: linear;
-  }
-  75% {
-    transform: translate3d(60px, 100px, 0px);
-  }
-}
-
-@-webkit-keyframes movecircles2 {
-	0%, 75% {
-	  opacity: 0.5;
-    transform: translate3d(10px, 10px, 0px);
-    animation-timing-function: linear;
-  }
-  25%, 50% {
-	  opacity: 0.75;
-    transform: translate3d(100px, 50px, 0px);
-    animation-timing-function: linear;
-  }
-  100% {
-	  opacity: 1;
-    transform: translate3d(400px, -10px, 0px);
-  }
-}
-
-@-webkit-keyframes movecircles3 {
- 	0, 25% {
-	  opacity: 1;
-    transform: translate3d(10px, 10px, 0px);
-    animation-timing-function: linear;
-  }
-  25%, 75% {
-    opacity: 0.7;
-    transform: translate3d(50px, 50px, 0px);
-    animation-timing-function: linear;
-  }
-  50% {
-    opacity: 0.5;
-    transform: translate3d(0px, -50px, 0px);
-  }
- }
-
-@-webkit-keyframes movecircles4 {
- 	0, 100% {
-	  opacity: 1;
-    transform: translate3d(10px, 90px, 0px);
-    animation-timing-function: linear;
-  }
-  35%, 65% {
-    opacity: 0.7;
-    transform: translate3d(90px, 50px, 0px);
-    animation-timing-function: linear;
-  }
-  75%, 25% {
-    opacity: 0.5;
-    transform: translate3d(180px, -400px, 0px);
-  }
- }
-
-
-
-
-
-
-@-moz-keyframes movecircles {
-	0% {
-    transform: translate3d(50px, 40px, 0px);
-    animation-timing-function: ease-in;
-  }
-  50% {
-    transform: translate3d(50px, 50px, 0px);
-    animation-timing-function: ease-out;
-  }
-  100% {
-    transform: translate3d(50px, 40px, 0px);
-  }
-}
-@-o-keyframes movecircles {
-	0% {
-    transform: translate3d(50px, 40px, 0px);
-    animation-timing-function: ease-in;
-  }
-  50% {
-    transform: translate3d(50px, 50px, 0px);
-    animation-timing-function: ease-out;
-  }
-  100% {
-    transform: translate3d(50px, 40px, 0px);
-  }
 }
