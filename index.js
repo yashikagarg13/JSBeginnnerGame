@@ -114,6 +114,7 @@ playNowBtn.addEventListener("click", function() {
         removeEventHandler(circles[length]);
       };
       playNowBtn.removeAttribute("disabled");
+      alert("Time is up!!");
     }
     --timerText;
   }, 1000);
