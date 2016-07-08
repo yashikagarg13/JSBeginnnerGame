@@ -1,3 +1,17 @@
+/***********************************************************************************************************************
+
+  Colors in palette
+
+  black
+  blue
+  gray
+  green
+  orange
+  red
+  yellow
+
+***********************************************************************************************************************/
+
 var COLOR = "gray";
 
 /***********************************************************************************************************************
@@ -5,21 +19,21 @@ var COLOR = "gray";
   Write code for event Handler
 
 ***********************************************************************************************************************/
-var scoreElement = document.querySelector("#score");
-var circles = document.querySelectorAll(".circle." + COLOR); // write code to select circles of your color
+var scoreElement = document.querySelector("#score");              // Write code to select score element
+var circles = document.querySelectorAll(".circle." + COLOR);      // Write code to select circles of your color
 
-function clickHandler() {
+function clickHandler() {console.log(this)
   totalScore += SCORE;
-  scoreElement.innerHTML = totalScore;                    // Write code to update score text in HTML
-  $(this).hide();
+  scoreElement.innerHTML = totalScore;                            // Write code to update score text in HTML
+  this.setAttribute("style", "visibility: hidden");
 }
 
 function attachEventHandler(circle) {
-  circle.addEventListener("click", clickHandler);         // Write code to add event listener
+  circle.addEventListener("click", clickHandler);                 // Write code to add event listener
 }
 
 function removeEventHandler(circle) {
-  circle.removeEventListener("click", clickHandler);      // Write code to remove event listener
+  circle.removeEventListener("click", clickHandler);             // Write code to remove event listener
 }
 
 /***********************************************************************************************************************
@@ -70,12 +84,15 @@ var length = circles.length;
 
 playNowBtn.addEventListener("click", function() {
   var timerText = 10;
+  totalScore = 0
+  scoreElement.innerHTML = totalScore;
+  timerElement.innerHTML = "10 Secs";
+  playNowBtn.setAttribute("disabled", true);
 
   // Start Timer
   timer = setTimeout(function() {
     if (timer)
       clearTimeout(timer);
-
 
   }, TIMER);
 
@@ -93,8 +110,10 @@ playNowBtn.addEventListener("click", function() {
 
       length = circles.length;
       while(--length >= 0) {
+        circles[length].setAttribute("style", "visibility: visible");
         removeEventHandler(circles[length]);
       };
+      playNowBtn.removeAttribute("disabled");
     }
     --timerText;
   }, 1000);
